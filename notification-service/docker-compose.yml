@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  notification-service:
+    image: notification-service:1.0
+    ports:
+      - "8083:8083"
+    environment:
+      SPRİNG_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    external: true
